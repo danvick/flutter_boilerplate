@@ -23,6 +23,7 @@ dependencies:
   debug_mode: ^0.1.1
   dio: ^3.0.9
   dio_http_cache: ^0.2.6
+  pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
   flutter_test:
