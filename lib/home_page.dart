@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutterreststarter/services/dummy_service.dart';
 
+import 'models/post.dart';
+
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class HomePage extends StatelessWidget {
       ),
       body: FutureBuilder(
         future: DummyService.getPosts(),
-        builder: (context, AsyncSnapshot<List<dynamic>> snapshot) {
+        builder: (context, AsyncSnapshot<List<Post>> snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
               separatorBuilder: (context, int) => Divider(),
@@ -18,8 +20,8 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return ListTile(
                   // leading: ,
-                  title: Text(snapshot.data[index]['title']),
-                  subtitle: Text(snapshot.data[index]['body']),
+                  title: Text(snapshot.data[index].title),
+                  subtitle: Text(snapshot.data[index].body),
                 );
               },
             );
