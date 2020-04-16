@@ -24,6 +24,7 @@ dependencies:
   dio: ^3.0.9
   dio_http_cache: ^0.2.6
   pretty_dio_logger: ^1.1.1
+  flutter_stetho: ^0.6.0-dev.1
 
 dev_dependencies:
   flutter_test:
