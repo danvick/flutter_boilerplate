@@ -8,7 +8,7 @@ class AuthInterceptor extends Interceptor {
     //TODO: Put the paths you want the interceptor to ignore
     if (!options.path.contains("/login")) {
       //TODO: Fetch your token from local storage (or wherever) and plug it in
-      var token = "some token";
+      var token = "<YOUR-TOKEN-HERE>";
       options.headers[HttpHeaders.authorizationHeader] =
           "Bearer ${token ?? ''}";
     }
