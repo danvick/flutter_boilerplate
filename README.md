@@ -28,8 +28,13 @@ The main aim of this package is to get you up and running as fast as possible on
     * To change the background color of your splash screen go to your `pubspec.yaml` under `flutter_native_splash -> color` and put your prefered color code. Default is white.
     * Finally run `flutter pub pub run flutter_native_splash:create` to generate your resources and update your manifest files.
 
-7. Now go start working on your app.
-8. Profit!
+7. Before releasing your app, make sure to sign it.
+    * [Generate a keystore file](https://flutter.dev/docs/deployment/android#create-a-keystore).
+    * Go to `android/key.properties` and include your kestore path, alias and password.
+
+8. Now go start working on your app.
+
+9. Profit!
 
     <img height=200 src="https://melmagazine.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-31-at-5.47.12-PM.png">
 
