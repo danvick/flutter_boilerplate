@@ -38,11 +38,17 @@ dev_dependencies:
   # flutter run change_app_package_name:main <com.new.package.name>
   flutter_launcher_icons: ^0.7.4
   # flutter pub run flutter_launcher_icons:main
+  flutter_native_splash: ^0.1.9
+  # flutter pub pub run flutter_native_splash:create
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
+
+flutter_native_splash:
+  image: assets/splash/splash.png
+  color: "ffffff"
 
 
 # For information on the generic Dart part of this file, see the
