@@ -1,14 +1,38 @@
 # Flutter Rest Starter
 
-My Flutter starter application for projects with a REST backend. 
+My Flutter starter application for projects with a REST backend.
+
+The main aim of this package is to get you up and running as fast as possible on your next Flutter project without all the hassle of initial project setup.
+
 * **NOTE**: May be a bit opinionated in the packages and style being used
 
 ## Getting Started
-TODO
+1. Clone this repo
+
+2. Run `flutter pub get` to fetch dependencies
+
+3. Now to change your app's package name / bundle identifier in both Android and iOS manifests, run `flutter run change_app_package_name:main <com.new.package.name>`. 
+
+    * This step makes use of [change_app_package_name](https://pub.dev/packages/change_app_package_name), go give the package some love.
+
+4. Next you'll need to change your app's `CFBundleName` (for iOS) and `android:label` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'm considering submittiong a PR to the package's repo.
+
+5. Then we'll auto generate your app lancher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
+    * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
+    * Now run `flutter pub run flutter_launcher_icons:main`. This command will auto generate Android and iOS launcher icons for the different DPIs and place them in their respective resource directories.
+
+* **NOTE**: Check the package documentation for more configuration options on how to generate launcher icons and update your `pubspec.yaml` accordingly. For example, you may want to have different icons for different platforms since Android allows you to use a transparent icon and iOS doesn't. 
+
+6. We'll then generate native splash screens for both of our platforms to be shown before our app loads, and for this we'll use [flutter_native_splash](https://pub.dev/packages/flutter_native_splash).
+    * Copy the image you want to be shown at the center of your splash screen to `assets/splash/splash.png`
+    * To change the background color of your splash screen go to your `pubspec.yaml` under `flutter_native_splash -> color` and put your prefered color code. Default is white.
+    * Finally run `flutter pub pub run flutter_native_splash:create` to generate your resources and update your manifest files.
+
+7. Now go start working on yur app and Profit!
 
 
 ## Packages used 
-* [Dio](https://pub.dev/packages/dio) - The best HTTP Client for Flutter IMO. Reusable interceptors, amirite?
+* [dio](https://pub.dev/packages/dio) - The best HTTP Client for Flutter IMO. Reusable interceptors, amirite?
 
 * [dio_http_cache](https://pub.dev/packages/dio_http_cache) - Dio interceptor to cache requests. Intercepts requests to respond with cached data and responses to cache received remote data. Very configurable.
 
