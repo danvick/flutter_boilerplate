@@ -6,7 +6,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'http_interceptors/auth_interceptor.dart';
 import 'http_interceptors/error_interceptor.dart';
 
-// TODO: Use a legit dependency injector instead of a Singleton
+// FIXME: Use a legit dependency injector instead of a Singleton
 class HttpClient {
   static final CacheConfig cacheConfig = CacheConfig();
   static final HttpClient _singleton = HttpClient._();

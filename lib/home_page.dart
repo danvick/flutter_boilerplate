@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutterreststarter/services/dummy_service.dart';
+import 'services/dummy_service.dart';
 
 import 'models/post.dart';
 
