@@ -15,7 +15,7 @@ The main aim of this package is to get you up and running as fast as possible on
 
     * This step makes use of [change_app_package_name](https://pub.dev/packages/change_app_package_name), go give the package some love.
 
-4. Next you'll need to change your app's `CFBundleName` (for iOS) and `android:label` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'm considering submittiong a PR to the package's repo.
+4. Next you'll need to change your app's `CFBundleName` (for iOS) and `android:label` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'm considering submitting a PR to the package's repo.
 
 5. Then we'll auto generate your app lancher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
     * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
@@ -28,10 +28,19 @@ The main aim of this package is to get you up and running as fast as possible on
     * To change the background color of your splash screen go to your `pubspec.yaml` under `flutter_native_splash -> color` and put your prefered color code. Default is white.
     * Finally run `flutter pub pub run flutter_native_splash:create` to generate your resources and update your manifest files.
 
-7. Now go start working on yur app and Profit!
+7. Now go start working on your app.
+8. Profit!
+
+    <img height=200 src="https://melmagazine.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-31-at-5.47.12-PM.png">
 
 
 ## Packages used 
+* [change_app_package_name](https://pub.dev/packages/change_app_package_name) - Change App Package Name with single command. It makes the process very easy and fast.
+
+* [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) - A command-line tool which simplifies the task of updating your Flutter app's launcher icon.
+
+* [flutter_native_splash](https://pub.dev/packages/flutter_native_splash) - Automatically generates native code for adding splash screens in Android and iOS. Customize with specific platform, background color and splash image.
+
 * [dio](https://pub.dev/packages/dio) - The best HTTP Client for Flutter IMO. Reusable interceptors, amirite?
 
 * [dio_http_cache](https://pub.dev/packages/dio_http_cache) - Dio interceptor to cache requests. Intercepts requests to respond with cached data and responses to cache received remote data. Very configurable.
