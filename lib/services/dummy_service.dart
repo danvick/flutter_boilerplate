@@ -1,5 +1,5 @@
-import 'package:flutterreststarter/models/models.dart';
-import 'package:flutterreststarter/utils/http_client.dart';
+import '../models/models.dart';
+import '../utils/http_client.dart';
 
 class DummyService {
   static Future<List<Post>> getPosts() async {
