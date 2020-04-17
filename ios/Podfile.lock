@@ -1,4 +1,7 @@
 PODS:
+  - Crashlytics (3.14.0):
+    - Fabric (~> 1.10.2)
+  - Fabric (1.10.2)
   - Firebase/Analytics (6.16.0):
     - Firebase/Core
   - Firebase/Core (6.16.0):
@@ -11,6 +14,11 @@ PODS:
     - FirebasePerformance (~> 3.1.9)
   - firebase_analytics (0.0.1):
     - Firebase/Analytics (~> 6.0)
+    - Firebase/Core
+    - Flutter
+  - firebase_crashlytics (0.0.1):
+    - Crashlytics
+    - Fabric
     - Firebase/Core
     - Flutter
   - firebase_performance (0.0.1):
@@ -126,6 +134,7 @@ PODS:
 DEPENDENCIES:
   - Firebase/Analytics
   - firebase_analytics (from `.symlinks/plugins/firebase_analytics/ios`)
+  - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - firebase_performance (from `.symlinks/plugins/firebase_performance/ios`)
   - Flutter (from `Flutter`)
   - flutter_stetho (from `.symlinks/plugins/flutter_stetho/ios`)
@@ -133,6 +142,8 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Crashlytics
+    - Fabric
     - Firebase
     - FirebaseABTesting
     - FirebaseAnalytics
@@ -158,6 +169,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   firebase_analytics:
     :path: ".symlinks/plugins/firebase_analytics/ios"
+  firebase_crashlytics:
+    :path: ".symlinks/plugins/firebase_crashlytics/ios"
   firebase_performance:
     :path: ".symlinks/plugins/firebase_performance/ios"
   Flutter:
@@ -168,8 +181,11 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/sqflite/ios"
 
 SPEC CHECKSUMS:
+  Crashlytics: 540b7e5f5da5a042647227a5e3ac51d85eed06df
+  Fabric: 706c8b8098fff96c33c0db69cbf81f9c551d0d74
   Firebase: 497158b816d0a86fc31babbd05546fcd7e6083ff
   firebase_analytics: dacdcfc524d722fff13dcff942f0dfa47e6be567
+  firebase_crashlytics: bd8c58df07f107cb7e1a20cb190b9a468e0a69fd
   firebase_performance: 96d9912b36a93e55201c24e386915d2a0dac1be9
   FirebaseABTesting: 0d10f3cdc3fa00f3f175b5b56c1003c8e888299f
   FirebaseAnalytics: cf95d3aab897612783020fbd98401d5366f135ee

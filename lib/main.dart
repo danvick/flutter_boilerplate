@@ -1,6 +1,7 @@
 import 'package:debug_mode/debug_mode.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_analytics/observer.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_stetho/flutter_stetho.dart';
 
@@ -10,6 +11,9 @@ void main() {
   if (DebugMode.isInDebugMode) {
     Stetho.initialize();
   }
+  Crashlytics.instance.enableInDevMode = true;
+  // Pass all uncaught errors from the framework to Crashlytics.
+  FlutterError.onError = Crashlytics.instance.recordFlutterError;
   runApp(MyApp());
 }
 

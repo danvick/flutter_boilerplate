@@ -162,6 +162,7 @@
 				9705A1C41CF9048500538489 /* Embed Frameworks */,
 				3B06AD1E1E4923F5004D2608 /* Thin Binary */,
 				B2CDD8386D9C4CA7DBC4415B /* [CP] Embed Pods Frameworks */,
+				BBEF0D06244A1ED0005738E0 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -285,6 +286,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		BBEF0D06244A1ED0005738E0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/Fabric/run\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
