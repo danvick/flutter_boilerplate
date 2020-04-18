@@ -17,7 +17,7 @@ The main aim of this package is to get you up and running as fast as possible on
 
 4. Next you'll need to change your app's `CFBundleName` (for iOS) and `android:label` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'm considering submitting a PR to the package's repo.
 
-5. Then we'll auto generate your app lancher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
+5. Then we'll auto generate your app launcher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
     * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
     * Now run `flutter pub run flutter_launcher_icons:main`. This command will auto generate Android and iOS launcher icons for the different DPIs and place them in their respective resource directories.
 
@@ -25,12 +25,12 @@ The main aim of this package is to get you up and running as fast as possible on
 
 6. We'll then generate native splash screens for both of our platforms to be shown before our app loads, and for this we'll use [flutter_native_splash](https://pub.dev/packages/flutter_native_splash).
     * Copy the image you want to be shown at the center of your splash screen to `assets/splash/splash.png`
-    * To change the background color of your splash screen go to your `pubspec.yaml` under `flutter_native_splash -> color` and put your prefered color code. Default is white.
+    * To change the background color of your splash screen go to your `pubspec.yaml` under `flutter_native_splash -> color` and put your preferred color code. Default is white.
     * Finally run `flutter pub pub run flutter_native_splash:create` to generate your resources and update your manifest files.
 
 7. Before releasing your app, make sure to sign it by:
-    * [Generate a keystore file](https://flutter.dev/docs/deployment/android#create-a-keystore).
-    * Go to `android/key.properties` and include your kestore path, alias and password.
+    * [Generating a keystore file](https://flutter.dev/docs/deployment/android#create-a-keystore) if you don't already have one. If you do, go to the next step.
+    * Go to `android/key.properties` and include your keystore path, alias and password.
 
 8. Now go start working on your app.
 
