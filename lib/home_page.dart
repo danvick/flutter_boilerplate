@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
         title: Text("Flutter REST Starter"),
       ),
       body: FutureBuilder(
-        future: DummyService.getPosts(),
+        future: DummyService.getPostsWithCaching(),
         builder: (context, AsyncSnapshot<List<Post>> snapshot) {
           if (snapshot.hasData) {
             return ListView.separated(
@@ -19,7 +19,7 @@ class HomePage extends StatelessWidget {
               itemCount: snapshot.data.length,
               itemBuilder: (context, index) {
                 return ListTile(
-                  // leading: ,
+                  leading: CircleAvatar(child: Text("${snapshot.data[index].id}"),),
                   title: Text(snapshot.data[index].title),
                   subtitle: Text(snapshot.data[index].body),
                 );
