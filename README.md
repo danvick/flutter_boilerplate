@@ -21,7 +21,7 @@ The main aim of this package is to get you up and running as fast as possible on
     * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
     * Now run `flutter pub run flutter_launcher_icons:main`. This command will auto generate Android and iOS launcher icons for the different DPIs and place them in their respective resource directories.
 
-* **NOTE**: Check the package documentation for more configuration options on how to generate launcher icons and update your `pubspec.yaml` accordingly. For example, you may want to have different icons for different platforms since Android allows you to use a transparent icon and iOS doesn't. 
+    **NOTE**: Check the package documentation for more configuration options on how to generate launcher icons and update your `pubspec.yaml` accordingly. For example, you may want to have different icons for different platforms since Android allows you to use a transparent icon and iOS doesn't. 
 
 6. We'll then generate native splash screens for both of our platforms to be shown before our app loads, and for this we'll use [flutter_native_splash](https://pub.dev/packages/flutter_native_splash).
     * Copy the image you want to be shown at the center of your splash screen to `assets/splash/splash.png`
@@ -41,7 +41,7 @@ The main aim of this package is to get you up and running as fast as possible on
     * Download your `GoogleService-Info.plist` & `google-services.json` and drop them into their corresponding folders for iOS and Android. I've `.gitignore'd` these files so that you won't by any chance have them checked into your VCS by mistake.
     * Well, that's it. You're done! No configuration needed, I've already done that  for you.
     
-**NOTE:** With this step, we'll also have integrated into your HTTP Client [dio_firebase_performance](https://pub.dev/packages/dio_firebase_performance) which is a [Dio Interceptor](https://pub.dev/packages/dio#interceptors) that will measure the  performance of all your HTTP calls to the server and report the stats to Firebase. 
+    **NOTE:** With this step, we'll also have integrated into your HTTP Client [dio_firebase_performance](https://pub.dev/packages/dio_firebase_performance) which is a [Dio Interceptor](https://pub.dev/packages/dio#interceptors) that will measure the  performance of all your HTTP calls to the server and report the stats to Firebase. 
 
 9. Hunt down any `TODOs` within the lib folder and get that sorted.
 
