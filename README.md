@@ -15,7 +15,7 @@ The main aim of this package is to get you up and running as fast as possible on
 
     * This step makes use of [change_app_package_name](https://pub.dev/packages/change_app_package_name), go give the package some love.
 
-4. Next you'll need to change your app's `CFBundleName` (for iOS) and `android:label` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'm considering submitting a PR to the package's repo.
+4. Next you'll need to change your app's user-readable label - the `CFBundleName` and/or `CFBundleDisplayName` within `Info.plist` (for iOS) and `android:label` field in your application node in `AndroidManifest.xml` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'll consider submitting a PR to the package's repo if this repo gets to 25 Stars - so get busy smashing that Star Button.
 
 5. Then we'll auto generate your app launcher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
     * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
