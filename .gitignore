@@ -38,3 +38,7 @@ lib/generated_plugin_registrant.dart
 
 # Old files
 *.old
+
+# Firebase project config files
+/android/app/google-services.json
+/ios/Runner/GoogleService-Info.plist
