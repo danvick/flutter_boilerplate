@@ -32,9 +32,22 @@ The main aim of this package is to get you up and running as fast as possible on
     * [Generating a keystore file](https://flutter.dev/docs/deployment/android#create-a-keystore) if you don't already have one. If you do, go to the next step.
     * Go to `android/key.properties` and include your keystore path, alias and password.
 
-8. Now go start working on your app.
+8. Firebase Reporting (OPTIONAL - though strongly suggested). 
 
-9. Profit!
+    In this step we are going to integrate different Firebase Reporting Tools into our including [Firebase Analytics](https://firebase.google.com/products/analytics), [Firebase Performance](https://firebase.google.com/products/performance/) and [Crashlytics](https://firebase.google.com/products/crashlytics/).
+    
+    * Merge branch `firebase_reporting` into your main branch. Feel free to delete the branch after this step.
+    * Create your Firebase project
+    * Download your `GoogleService-Info.plist` & `google-services.json` and drop them into their corresponding folders for iOS and Android. I've `.gitignore'd` these files so that you won't by any chance have them checked into your VCS by mistake.
+    * Well, that's it. You're done! No configuration needed, I've already done that  for you.
+    
+**NOTE:** With this step, we'll also have integrated into your HTTP Client [dio_firebase_performance](https://pub.dev/packages/dio_firebase_performance) which is a [Dio Interceptor](https://pub.dev/packages/dio#interceptors) that will measure the  performance of all your HTTP calls to the server and report the stats to Firebase. 
+
+9. Hunt down any `TODOs` within the lib folder and get that sorted.
+
+10. Now go start working on your app.
+
+11. Profit!
 
     <img height=200 src="https://melmagazine.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-31-at-5.47.12-PM.png">
 
@@ -56,3 +69,11 @@ The main aim of this package is to get you up and running as fast as possible on
 [dio_log](https://pub.dev/packages/dio_log) - would be a great alternative to Stetho. It's a Dio Interceptor that presents your requests/responses within your app UI
 
 * [freezed](https://pub.dev/packages/freezed) - Simple yet powerful code generator for immutable classes with all the good stuff like unions/pattern-matching/copy etc. Made by [Remi Rousselet](https://github.com/rrousselGit), the creator & maintainer of Provider. Can work with [json_serializable](https://pub.dev/packages/json_serializable) for all your `fromJson()` and `toJson()` needs.
+
+* [firebase_analytics](https://pub.dev/packages/firebase_analytics) (OPTIONAL) - Flutter plugin for Google Analytics for Firebase, an app measurement solution that provides insight on app usage and user engagement on Android and iOS.
+
+* [firebase_performance](https://pub.dev/packages/firebase_performance) (OPTIONAL) - Flutter plugin for Google Performance Monitoring for Firebase, an app measurement solution that monitors traces and HTTP/S network requests on Android and iOS.
+
+* [firebase_crashlytics](https://pub.dev/packages/firebase_crashlytics) (OPTIONAL) - Flutter plugin for Firebase Crashlytics. It reports uncaught errors to the Firebase console.
+
+* [dio_firebase_performance](https://pub.dev/packages/dio_firebase_performance) (OPTIONAL) - Dio's Interceptor implementation that sends http request metric data to Firebase.
