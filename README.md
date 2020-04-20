@@ -11,7 +11,7 @@ The main aim of this package is to get you up and running as fast as possible on
 
 2. Run `flutter pub get` to fetch dependencies
 
-3. Now to change your app's package name / bundle identifier in both Android and iOS manifests, run `flutter run change_app_package_name:main <com.new.package.name>`. 
+3. Now to change your app's package name / bundle identifier in both Android and iOS manifests, run `flutter pub run change_app_package_name:main <com.new.package.name>`. 
 
     * This step makes use of [change_app_package_name](https://pub.dev/packages/change_app_package_name), go give the package some love.
 
