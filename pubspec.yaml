@@ -1,5 +1,5 @@
-name: flutterreststarter
-description: My Flutter starter application for projects with a REST backend.
+name: flutterreststarter #TODO Replace with you app's name
+description: My Flutter Starter Template #TODO Replace with you app's description
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
