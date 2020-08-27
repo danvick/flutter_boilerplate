@@ -19,6 +19,8 @@ The main aim of this package is to get you up and running as fast as possible on
 
     I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'll consider submitting a PR to the package's repo if this repo gets to 25 Stars - so get busy smashing that Star Button.
 
+    **NOTE**: You'll also need to change your package `name` and `description` within `pubspec.yaml`
+    
 5. Then we'll auto generate your app launcher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
     * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
     * Now run `flutter pub run flutter_launcher_icons:main`. This command will auto generate Android and iOS launcher icons for the different DPIs and place them in their respective resource directories.
