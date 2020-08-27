@@ -11,12 +11,16 @@ The main aim of this package is to get you up and running as fast as possible on
 
 2. Run `flutter pub get` to fetch dependencies
 
-3. Now to change your app's package name / bundle identifier in both Android and iOS manifests, run `flutter run change_app_package_name:main <com.new.package.name>`. 
+3. Now to change your app's package name / bundle identifier in both Android and iOS manifests, run `flutter pub run change_app_package_name:main <com.new.package.name>`. 
 
     * This step makes use of [change_app_package_name](https://pub.dev/packages/change_app_package_name), go give the package some love.
 
-4. Next you'll need to change your app's `CFBundleName` (for iOS) and `android:label` (for Android). I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'm considering submitting a PR to the package's repo.
+4. Next you'll need to change your app's user-readable label - the `CFBundleName` and/or `CFBundleDisplayName` within `Info.plist` (for iOS) and `android:label` field in your application node in `AndroidManifest.xml` (for Android). 
 
+    I'm afraid this step is manual; would be cool if `change_app_package_name` could do this for you. I'll consider submitting a PR to the package's repo if this repo gets to 25 Stars - so get busy smashing that Star Button.
+
+    **NOTE**: You'll also need to change your package `name` and `description` within `pubspec.yaml`
+    
 5. Then we'll auto generate your app launcher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
     * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png`
     * Now run `flutter pub run flutter_launcher_icons:main`. This command will auto generate Android and iOS launcher icons for the different DPIs and place them in their respective resource directories.
