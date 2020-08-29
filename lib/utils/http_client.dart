@@ -1,6 +1,6 @@
-import 'package:debug_mode/debug_mode.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_http_cache/dio_http_cache.dart';
+import 'package:flutter/foundation.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'http_interceptors/auth_interceptor.dart';
@@ -10,6 +10,7 @@ import 'http_interceptors/error_interceptor.dart';
 class HttpClient {
   static final CacheConfig cacheConfig = CacheConfig();
   static final HttpClient _singleton = HttpClient._();
+
   static HttpClient get instance => _singleton;
   Dio _dio;
 
@@ -24,7 +25,7 @@ class HttpClient {
         ..add(ErrorInterceptor())
         ..add(DioCacheManager(cacheConfig).interceptor);
 
-      if (DebugMode.isInDebugMode) {
+      if (kDebugMode) {
         dio.interceptors.add(
           PrettyDioLogger(
             requestHeader: true,
