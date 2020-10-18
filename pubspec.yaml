@@ -29,15 +29,24 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: any
   freezed:
   build_runner: ^1.10.3
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
+
   change_app_package_name: ^0.1.2
   # flutter pub run change_app_package_name:main <com.new.package.name>
+
   flutter_launcher_icons: ^0.8.1
   # flutter pub run flutter_launcher_icons:main
+
   flutter_native_splash: ^0.1.9
   # flutter pub run flutter_native_splash:create
+
+  screenshots: any
+  # screenshots
 
 flutter_icons:
   android: "launcher_icon"

@@ -55,6 +55,23 @@ The main aim of this package is to get you up and running as fast as possible on
 
     <img height=200 src="https://melmagazine.com/wp-content/uploads/2019/07/Screen-Shot-2019-07-31-at-5.47.12-PM.png">
 
+### Taking automated screenshots
+Included in this template, is the [screenshots command-line utility and package](https://pub.dev/packages/screenshots) for automatically capturing screenshot images of your app during integration testing to be uploaded to the different app stores for your app. The package plays nice with [fastlane](https://fastlane.tools) but can also be used indipendently.
+
+1. Follow the [instructions here](https://pub.dev/packages/screenshots#installation) to install the screenshots command-line utility on your computer.
+2. Go to `screenshots.yaml` file to configure how your app screenshots will be taken. The configuration options available include but are not limited to: which devices to user for Android and iOS, Device orientations, Locales etc. Find more config options [here](https://pub.dev/packages/screenshots#configuration). 
+3. In your integration tests:
+    * Import screenshots functions:
+    ```dart
+    import 'package:screenshots/capture_screen.dart';
+    import 'package:screenshots/config.dart';
+    ```
+    * Get screenshots utility configuration: `final config = Config().config;`
+    * To take a screenshot at different stages of the integration tests, call the screeshot function passing in the driver, screenshots config and name of the screenshot. e.g. 
+    ```dart
+    await screenshot(driver, config, 'home_screen');
+    ```
+4. In your terminal, execute the `screenshots` to get your screenshots.
 
 ## Packages used 
 * [change_app_package_name](https://pub.dev/packages/change_app_package_name) - Change App Package Name with single command. It makes the process very easy and fast.
@@ -62,6 +79,8 @@ The main aim of this package is to get you up and running as fast as possible on
 * [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) - A command-line tool which simplifies the task of updating your Flutter app's launcher icon.
 
 * [flutter_native_splash](https://pub.dev/packages/flutter_native_splash) - Automatically generates native code for adding splash screens in Android and iOS. Customize with specific platform, background color and splash image.
+
+* [screenshots](https://pub.dev/packages/screenshots) - Screenshots is a standalone command line utility and package for capturing screenshot images for Flutter.
 
 * [dio](https://pub.dev/packages/dio) - The best HTTP Client for Flutter IMO. Reusable interceptors, amirite?
 
