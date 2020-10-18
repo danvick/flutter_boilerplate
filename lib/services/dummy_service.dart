@@ -11,7 +11,7 @@ class DummyService {
     return response.data.map<Post>((p) => Post.fromJson(p)).toList();
   }
 
-  // This method implements http_caching with dio_http_cache package
+  // This method implements HTTP caching with dio_http_cache package
   static Future<List<Post>> getPostsWithCaching({ignoreCache = false}) async {
     var response = await HttpClient.instance.dio.get(
       'https://jsonplaceholder.typicode.com/posts',

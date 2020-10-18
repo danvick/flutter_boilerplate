@@ -20,11 +20,9 @@ dependencies:
   flutter:
     sdk: flutter
 
-  debug_mode: ^0.1.1
   dio: ^3.0.10
-  dio_http_cache: ^0.2.8
+  dio_http_cache: ^0.2.11
   pretty_dio_logger: ^1.1.1
-  flutter_stetho: ^0.6.0-dev.1
   freezed_annotation:
   json_serializable: ^3.4.1
   firebase_analytics: ^6.0.0
@@ -35,15 +33,25 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  test: any
+  pedantic: ^1.9.2
   freezed:
-  build_runner: ^1.10.0
+  build_runner: ^1.10.3
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
+
   change_app_package_name: ^0.1.2
   # flutter pub run change_app_package_name:main <com.new.package.name>
-  flutter_launcher_icons: ^0.7.5
+
+  flutter_launcher_icons: ^0.8.1
   # flutter pub run flutter_launcher_icons:main
+
   flutter_native_splash: ^0.1.9
   # flutter pub run flutter_native_splash:create
+
+  screenshots: any
+  # screenshots
 
 flutter_icons:
   android: "launcher_icon"
