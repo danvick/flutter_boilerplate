@@ -1,13 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_stetho/flutter_stetho.dart';
 
 import 'home_page.dart';
 
 void main() {
-  if (kDebugMode) {
-    Stetho.initialize();
-  }
   runApp(MyApp());
 }
 

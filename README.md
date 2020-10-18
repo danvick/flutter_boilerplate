@@ -69,8 +69,7 @@ The main aim of this package is to get you up and running as fast as possible on
 
 * [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger) - Dio interceptor that prettily prints to console HTTP requests and responses going through Dio
 
-* [flutter_stetho](https://pub.dev/packages/flutter_stetho) - Enables you to inspect http calls the way you would for web apps - in Chrome Dev Tools. Wraps all http calls and report information to the Chrome Dev Tools via the Stetho package from Facebook. It's a shame it only works for Android and not iOS.
-[dio_log](https://pub.dev/packages/dio_log) - would be a great alternative to Stetho. It's a Dio Interceptor that presents your request & response logs within your app's UI
+* [dio_log](https://pub.dev/packages/dio_log) - It's a Dio Interceptor that presents your request & response logs within your app's UI
 
 * [freezed](https://pub.dev/packages/freezed) - Simple yet powerful code generator for immutable classes with all the good stuff like unions/pattern-matching/copy etc. Made by [Remi Rousselet](https://github.com/rrousselGit), the creator & maintainer of Provider. Can work with [json_serializable](https://pub.dev/packages/json_serializable) for all your `fromJson()` and `toJson()` needs.
 
