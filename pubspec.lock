@@ -414,7 +414,7 @@ packages:
     source: hosted
     version: "1.8.0-nullsafety.1"
   pedantic:
-    dependency: transitive
+    dependency: "direct dev"
     description:
       name: pedantic
       url: "https://pub.dartlang.org"

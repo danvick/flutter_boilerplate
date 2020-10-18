@@ -32,6 +32,7 @@ dev_dependencies:
   flutter_driver:
     sdk: flutter
   test: any
+  pedantic: ^1.9.2
   freezed:
   build_runner: ^1.10.3
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
