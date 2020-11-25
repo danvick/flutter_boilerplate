@@ -34,7 +34,7 @@ dev_dependencies:
   test: any
   pedantic: ^1.9.2
   freezed:
-  build_runner: ^1.10.3
+  build_runner: ^1.10.6
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
 
   change_app_package_name: ^0.1.2

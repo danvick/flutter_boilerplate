@@ -16,7 +16,7 @@ class DummyService {
     var response = await HttpClient.instance.dio.get(
       'https://jsonplaceholder.typicode.com/posts',
       options: buildCacheOptions(
-        Duration(days: 7), // Ignore cached data if more than 7 days old
+        Duration(seconds: 5), // Ignore cached data if more than 7 days old
         forceRefresh: ignoreCache, //Ignore local cache if this value is true
       ),
     );
