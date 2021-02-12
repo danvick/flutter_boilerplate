@@ -48,7 +48,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.8.1
   # flutter pub run flutter_launcher_icons:main
 
-  flutter_native_splash: ^0.1.9
+  flutter_native_splash: ^0.3.0
   # flutter pub run flutter_native_splash:create
 
   screenshots: any
