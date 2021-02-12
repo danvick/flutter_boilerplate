@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'post.dart';
 
@@ -12,9 +12,11 @@ Post _$PostFromJson(Map<String, dynamic> json) {
   return _Post.fromJson(json);
 }
 
+/// @nodoc
 class _$PostTearOff {
   const _$PostTearOff();
 
+// ignore: unused_element
   _Post call({int userId, int id, String title, String body}) {
     return _Post(
       userId: userId,
@@ -23,11 +25,18 @@ class _$PostTearOff {
       body: body,
     );
   }
+
+// ignore: unused_element
+  Post fromJson(Map<String, Object> json) {
+    return Post.fromJson(json);
+  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $Post = _$PostTearOff();
 
+/// @nodoc
 mixin _$Post {
   int get userId;
   int get id;
@@ -38,12 +47,14 @@ mixin _$Post {
   $PostCopyWith<Post> get copyWith;
 }
 
+/// @nodoc
 abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res>;
   $Res call({int userId, int id, String title, String body});
 }
 
+/// @nodoc
 class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
   _$PostCopyWithImpl(this._value, this._then);
 
@@ -67,6 +78,7 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
   }
 }
 
+/// @nodoc
 abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$PostCopyWith(_Post value, $Res Function(_Post) then) =
       __$PostCopyWithImpl<$Res>;
@@ -74,6 +86,7 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   $Res call({int userId, int id, String title, String body});
 }
 
+/// @nodoc
 class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
     implements _$PostCopyWith<$Res> {
   __$PostCopyWithImpl(_Post _value, $Res Function(_Post) _then)
@@ -99,6 +112,8 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
 }
 
 @JsonSerializable()
+
+/// @nodoc
 class _$_Post implements _Post {
   _$_Post({this.userId, this.id, this.title, this.body});
 
