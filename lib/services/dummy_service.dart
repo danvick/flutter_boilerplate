@@ -1,4 +1,6 @@
-import 'package:dio_http_cache/dio_http_cache.dart';
+
+
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 
 import '../models/models.dart';
 import '../utils/http_client.dart';
@@ -11,14 +13,11 @@ class DummyService {
     return response.data.map<Post>((p) => Post.fromJson(p)).toList();
   }
 
-  // This method implements HTTP caching with dio_http_cache package
+  // This method implements HTTP caching with caching
   static Future<List<Post>> getPostsWithCaching({ignoreCache = false}) async {
     var response = await HttpClient.instance.dio.get(
       'https://jsonplaceholder.typicode.com/posts',
-      options: buildCacheOptions(
-        Duration(seconds: 5), // Ignore cached data if more than 7 days old
-        forceRefresh: ignoreCache, //Ignore local cache if this value is true
-      ),
+      options: HttpClient.instance.cacheOptions.copyWith(policy: CachePolicy.request).toOptions(),
     );
     return response.data.map<Post>((p) => Post.fromJson(p)).toList();
   }

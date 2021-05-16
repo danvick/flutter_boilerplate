@@ -2,25 +2,21 @@ import 'package:dio/dio.dart';
 
 class ErrorInterceptor extends Interceptor {
   @override
-  Future onError(DioError err) async {
+  void onError(DioError err, ErrorInterceptorHandler handler) {
     switch (err.type) {
-      case DioErrorType.CANCEL:
+      case DioErrorType.cancel:
         err.error = 'Request to API server was cancelled';
         break;
-      case DioErrorType.CONNECT_TIMEOUT:
+      case DioErrorType.connectTimeout:
         err.error = 'Connection to API server timed out';
         break;
-      case DioErrorType.DEFAULT:
-        err.error =
-            'Connection to API server failed due to internet connection';
-        break;
-      case DioErrorType.RECEIVE_TIMEOUT:
+      case DioErrorType.receiveTimeout:
         err.error = 'Receive timeout in connection with API server';
         break;
-      case DioErrorType.SEND_TIMEOUT:
+      case DioErrorType.sendTimeout:
         err.error = 'Send timeout in connection with API server';
         break;
-      case DioErrorType.RESPONSE:
+      case DioErrorType.response:
         if (err.response.data != null) {
           if (err.response.data is String) {
             err.error = '${err.response.statusCode}: ${err.response.data}';
@@ -45,7 +41,12 @@ class ErrorInterceptor extends Interceptor {
               'Received invalid status code: ${err.response.statusCode}';
         }
         break;
+
+      case DioErrorType.other:
+        err.error =
+            'Connection to API server failed due to internet connection';
+        break;
     }
-    return super.onError(err);
+    handler.next(err);
   }
 }

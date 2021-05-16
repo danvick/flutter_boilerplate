@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 
 class AuthInterceptor extends Interceptor {
   @override
-  Future<RequestOptions> onRequest(RequestOptions options) async {
+  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     //TODO: Put the paths you want the interceptor to ignore
     if (!options.path.contains('/login')) {
       //TODO: Fetch your token from local storage (or wherever) and plug it in
@@ -12,6 +12,6 @@ class AuthInterceptor extends Interceptor {
       options.headers[HttpHeaders.authorizationHeader] =
           "Bearer ${token ?? ''}";
     }
-    return options;
+    handler.next(options);
   }
 }

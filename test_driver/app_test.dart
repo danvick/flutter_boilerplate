@@ -1,4 +1,4 @@
-import 'package:flutter_driver/flutter_driver.dart';
+/*import 'package:flutter_driver/flutter_driver.dart';
 import 'package:screenshots/capture_screen.dart';
 import 'package:screenshots/config.dart';
 import 'package:test/test.dart';
@@ -29,4 +29,4 @@ void main() {
     });
 
   });
-}
+}*/
