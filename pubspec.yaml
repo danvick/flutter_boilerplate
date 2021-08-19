@@ -21,15 +21,15 @@ dependencies:
     sdk: flutter
 
   dio: ^4.0.0
-  dio_cache_interceptor: ^2.3.1
+  dio_cache_interceptor: ^3.0.1
   pretty_dio_logger: ^1.1.1
   freezed_annotation:
   json_serializable:
-  firebase_core: ^1.2.0
-  firebase_analytics: ^8.1.0
-  firebase_performance: ^0.7.0+3
+  firebase_core: ^1.5.0
+  firebase_analytics: ^8.3.0
+  firebase_performance: ^0.7.0+8
   dio_firebase_performance: ^0.3.0
-  firebase_crashlytics: ^2.0.4
+  firebase_crashlytics: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -37,18 +37,18 @@ dev_dependencies:
 #  flutter_driver:
 #    sdk: flutter
   test: any
-  pedantic: ^1.11.0
+  pedantic: ^1.11.1
   freezed:
-  build_runner: ^2.0.3
+  build_runner: ^2.1.1
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
 
   change_app_package_name: ^1.0.0
   # flutter pub run change_app_package_name:main <com.new.package.name>
 
-  flutter_launcher_icons: ^0.9.0
+  flutter_launcher_icons: ^0.9.1
   # flutter pub run flutter_launcher_icons:main
 
-  flutter_native_splash: ^1.1.8+4
+  flutter_native_splash: ^1.2.1
   # flutter pub run flutter_native_splash:create
 
   # screenshots: ^2.1.1
