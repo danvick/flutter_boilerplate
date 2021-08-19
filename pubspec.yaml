@@ -27,6 +27,7 @@ dependencies:
   firebase_analytics: ^8.3.0
   firebase_core: ^1.5.0
   firebase_performance: ^0.7.0+8
+  flutter_dotenv: ^5.0.2
   freezed_annotation:
   json_serializable:
   package_info_plus: ^1.0.5
@@ -71,6 +72,9 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - environment/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

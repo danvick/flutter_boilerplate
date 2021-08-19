@@ -42,3 +42,6 @@ lib/generated_plugin_registrant.dart
 # Firebase project config files
 /android/app/google-services.json
 /ios/Runner/GoogleService-Info.plist
+
+# Avoid adding .env files to VCS - may contain sensitive info
+*.env

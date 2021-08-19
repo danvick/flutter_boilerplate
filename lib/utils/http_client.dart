@@ -2,16 +2,19 @@ import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:dio_firebase_performance/dio_firebase_performance.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'http_interceptors/auth_interceptor.dart';
 import 'http_interceptors/error_interceptor.dart';
 import 'http_interceptors/user_agent_interceptor.dart';
 
-// FIXME: Consider using a legit dependency injector instead of a Singleton
+// Consider using a legit dependency injector instead of a Singleton
 class HttpClient {
   // static final CacheConfig cacheConfig = CacheConfig();
   static final HttpClient _singleton = HttpClient._();
+
+  static String get serverUrl => dotenv.env['SERVER_URL'];
 
   static HttpClient get instance => _singleton;
   Dio _dio;
@@ -45,6 +48,7 @@ class HttpClient {
 
       dio.interceptors.addAll([
         ErrorInterceptor(),
+        //FIXME-danvick: make caching optional depending on
         DioCacheInterceptor(options: cacheOptions),
         AuthInterceptor(),
         UserAgentInterceptor(),
