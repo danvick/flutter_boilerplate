@@ -22,38 +22,34 @@ dependencies:
 
   dio: ^4.0.0
   dio_cache_interceptor: ^3.0.1
-  pretty_dio_logger: ^1.1.1
+  firebase_crashlytics: ^2.2.0
+  dio_firebase_performance: ^0.3.0
+  firebase_analytics: ^8.3.0
+  firebase_core: ^1.5.0
+  firebase_performance: ^0.7.0+8
   freezed_annotation:
   json_serializable:
-  firebase_core: ^1.5.0
-  firebase_analytics: ^8.3.0
-  firebase_performance: ^0.7.0+8
-  dio_firebase_performance: ^0.3.0
-  firebase_crashlytics: ^2.2.0
   package_info_plus: ^1.0.5
+  pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
-#  flutter_driver:
-#    sdk: flutter
-  test: any
-  pedantic: ^1.11.1
-  freezed:
   build_runner: ^2.1.1
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
-
   change_app_package_name: ^1.0.0
   # flutter pub run change_app_package_name:main <com.new.package.name>
-
   flutter_launcher_icons: ^0.9.1
   # flutter pub run flutter_launcher_icons:main
-
   flutter_native_splash: ^1.2.1
   # flutter pub run flutter_native_splash:create
-
+  flutter_test:
+    sdk: flutter
+  #flutter_driver:
+  #sdk: flutter
+  freezed:
+  pedantic: ^1.11.1
   # screenshots: ^2.1.1
   # screenshots
+  test: any
 
 flutter_icons:
   android: "launcher_icon"
@@ -61,8 +57,8 @@ flutter_icons:
   image_path: "assets/icon/icon.png"
 
 flutter_native_splash:
-  image: assets/splash/splash.png
   color: "FFFFFF"
+  image: assets/splash/splash.png
 
 
 # For information on the generic Dart part of this file, see the
