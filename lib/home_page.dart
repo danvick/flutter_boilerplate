@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter REST Starter'),
+        title: const Text('Flutter REST Starter'),
       ),
       body: FutureBuilder(
         future: DummyService.getPostsWithCaching(ignoreCache: true),
@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
                 setState(() {});
               },
               child: ListView.separated(
-                separatorBuilder: (context, idx) => Divider(),
+                separatorBuilder: (context, idx) => const Divider(),
                 itemCount: snapshot.data.length,
                 itemBuilder: (context, index) {
                   return ListTile(
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
             );
           }
           return Center(
-            child: CircularProgressIndicator(),
+            child: const CircularProgressIndicator(),
           );
         },
       ),

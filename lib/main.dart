@@ -1,12 +1,10 @@
 import 'dart:async';
 
-import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_analytics/observer.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
+import 'app.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -24,22 +22,4 @@ void main() async {
   }, (exception, stackTrace) {
     FirebaseCrashlytics.instance.recordError(exception, stackTrace);
   });
-}
-
-class MyApp extends StatelessWidget {
-  final FirebaseAnalytics analytics = FirebaseAnalytics();
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Boilerplate',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
-      navigatorObservers: [
-        FirebaseAnalyticsObserver(analytics: analytics),
-      ],
-    );
-  }
 }
