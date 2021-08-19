@@ -10,7 +10,7 @@ class AuthInterceptor extends Interceptor {
       //TODO: Fetch your token from local storage (or wherever) and plug it in
       var token = '<YOUR-TOKEN-HERE>';
       options.headers[HttpHeaders.authorizationHeader] =
-          "Bearer ${token ?? ''}";
+          'Bearer $token';
     }
     handler.next(options);
   }

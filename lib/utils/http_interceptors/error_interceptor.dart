@@ -17,28 +17,28 @@ class ErrorInterceptor extends Interceptor {
         err.error = 'Send timeout in connection with API server';
         break;
       case DioErrorType.response:
-        if (err.response.data != null) {
-          if (err.response.data is String) {
-            err.error = '${err.response.statusCode}: ${err.response.data}';
+        if (err.response!.data != null) {
+          if (err.response!.data is String) {
+            err.error = '${err.response!.statusCode}: ${err.response!.data}';
           } else {
-            err.error = err.response.data['message'];
+            err.error = err.response!.data['message'];
           }
-          if (err.response.statusCode == 404 && err.response.data is String) {
-            err.error = '${err.response.statusCode} Page not found.';
+          if (err.response!.statusCode == 404 && err.response!.data is String) {
+            err.error = '${err.response!.statusCode} Page not found.';
           }
-          if (err.response.statusCode == 500 && err.response.data is String) {
-            err.error = '${err.response.statusCode} Internal server error.';
+          if (err.response!.statusCode == 500 && err.response!.data is String) {
+            err.error = '${err.response!.statusCode} Internal server error.';
           }
 
-          if (err.response.statusCode == 401) {
+          if (err.response!.statusCode == 401) {
             err.error = 'Unauthenticated';
           }
-          if (err.response.statusCode == 403) {
+          if (err.response!.statusCode == 403) {
             err.error = 'Unauthorized';
           }
         } else {
           err.error =
-              'Received invalid status code: ${err.response.statusCode}';
+              'Received invalid status code: ${err.response!.statusCode}';
         }
         break;
 

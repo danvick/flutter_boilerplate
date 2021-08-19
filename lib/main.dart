@@ -23,7 +23,7 @@ void main() async {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
 
     ErrorWidget.builder = (FlutterErrorDetails error) {
-      Zone.current.handleUncaughtError(error.exception, error.stack);
+      Zone.current.handleUncaughtError(error.exception, error.stack!);
       return ErrorWidget(error.exception);
     };
 

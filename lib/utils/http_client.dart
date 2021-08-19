@@ -14,10 +14,10 @@ class HttpClient {
   // static final CacheConfig cacheConfig = CacheConfig();
   static final HttpClient _singleton = HttpClient._();
 
-  static String get serverUrl => dotenv.env['SERVER_URL'];
+  static String get serverUrl => dotenv.env['SERVER_URL']!;
 
   static HttpClient get instance => _singleton;
-  Dio _dio;
+  Dio? _dio;
 
   HttpClient._();
 
@@ -66,6 +66,6 @@ class HttpClient {
         );
       }
     }
-    return _dio;
+    return _dio!;
   }
 }

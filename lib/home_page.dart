@@ -12,40 +12,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Flutter REST Starter'),
-      ),
+      appBar: AppBar(title: const Text('Flutter REST Starter')),
       body: FutureBuilder(
         future: DummyService.getPostsWithCaching(ignoreCache: true),
         builder: (context, AsyncSnapshot<List<Post>> snapshot) {
           if (snapshot.hasData) {
             return RefreshIndicator(
-              onRefresh: () async {
-                setState(() {});
-              },
+              onRefresh: () async => setState(() {}),
               child: ListView.separated(
                 separatorBuilder: (context, idx) => const Divider(),
-                itemCount: snapshot.data.length,
+                itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: CircleAvatar(
-                      child: Text('${snapshot.data[index].id}'),
+                      child: Text('${snapshot.data![index].id}'),
                     ),
-                    title: Text(snapshot.data[index].title),
-                    subtitle: Text(snapshot.data[index].body),
+                    title: Text(snapshot.data![index].title!),
+                    subtitle: Text(snapshot.data![index].body!),
                   );
                 },
               ),
             );
           }
           if (snapshot.hasError) {
-            return Center(
-              child: Text(snapshot.error.toString()),
-            );
+            return Center(child: Text(snapshot.error.toString()));
           }
-          return Center(
-            child: const CircularProgressIndicator(),
-          );
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );

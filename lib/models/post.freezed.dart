@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'post.dart';
 
@@ -8,6 +8,10 @@ part of 'post.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 Post _$PostFromJson(Map<String, dynamic> json) {
   return _Post.fromJson(json);
 }
@@ -16,8 +20,7 @@ Post _$PostFromJson(Map<String, dynamic> json) {
 class _$PostTearOff {
   const _$PostTearOff();
 
-// ignore: unused_element
-  _Post call({int userId, int id, String title, String body}) {
+  _Post call({int? userId, int? id, String? title, String? body}) {
     return _Post(
       userId: userId,
       id: id,
@@ -26,32 +29,31 @@ class _$PostTearOff {
     );
   }
 
-// ignore: unused_element
   Post fromJson(Map<String, Object> json) {
     return Post.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Post = _$PostTearOff();
 
 /// @nodoc
 mixin _$Post {
-  int get userId;
-  int get id;
-  String get title;
-  String get body;
+  int? get userId => throw _privateConstructorUsedError;
+  int? get id => throw _privateConstructorUsedError;
+  String? get title => throw _privateConstructorUsedError;
+  String? get body => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
-  $PostCopyWith<Post> get copyWith;
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PostCopyWith<Post> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $PostCopyWith<$Res> {
   factory $PostCopyWith(Post value, $Res Function(Post) then) =
       _$PostCopyWithImpl<$Res>;
-  $Res call({int userId, int id, String title, String body});
+  $Res call({int? userId, int? id, String? title, String? body});
 }
 
 /// @nodoc
@@ -64,16 +66,28 @@ class _$PostCopyWithImpl<$Res> implements $PostCopyWith<$Res> {
 
   @override
   $Res call({
-    Object userId = freezed,
-    Object id = freezed,
-    Object title = freezed,
-    Object body = freezed,
+    Object? userId = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
   }) {
     return _then(_value.copyWith(
-      userId: userId == freezed ? _value.userId : userId as int,
-      id: id == freezed ? _value.id : id as int,
-      title: title == freezed ? _value.title : title as String,
-      body: body == freezed ? _value.body : body as String,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -83,7 +97,7 @@ abstract class _$PostCopyWith<$Res> implements $PostCopyWith<$Res> {
   factory _$PostCopyWith(_Post value, $Res Function(_Post) then) =
       __$PostCopyWithImpl<$Res>;
   @override
-  $Res call({int userId, int id, String title, String body});
+  $Res call({int? userId, int? id, String? title, String? body});
 }
 
 /// @nodoc
@@ -97,23 +111,34 @@ class __$PostCopyWithImpl<$Res> extends _$PostCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object userId = freezed,
-    Object id = freezed,
-    Object title = freezed,
-    Object body = freezed,
+    Object? userId = freezed,
+    Object? id = freezed,
+    Object? title = freezed,
+    Object? body = freezed,
   }) {
     return _then(_Post(
-      userId: userId == freezed ? _value.userId : userId as int,
-      id: id == freezed ? _value.id : id as int,
-      title: title == freezed ? _value.title : title as String,
-      body: body == freezed ? _value.body : body as String,
+      userId: userId == freezed
+          ? _value.userId
+          : userId // ignore: cast_nullable_to_non_nullable
+              as int?,
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String?,
+      body: body == freezed
+          ? _value.body
+          : body // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_Post implements _Post {
   _$_Post({this.userId, this.id, this.title, this.body});
 
@@ -121,13 +146,13 @@ class _$_Post implements _Post {
       _$_$_PostFromJson(json);
 
   @override
-  final int userId;
+  final int? userId;
   @override
-  final int id;
+  final int? id;
   @override
-  final String title;
+  final String? title;
   @override
-  final String body;
+  final String? body;
 
   @override
   String toString() {
@@ -156,6 +181,7 @@ class _$_Post implements _Post {
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(body);
 
+  @JsonKey(ignore: true)
   @override
   _$PostCopyWith<_Post> get copyWith =>
       __$PostCopyWithImpl<_Post>(this, _$identity);
@@ -167,18 +193,19 @@ class _$_Post implements _Post {
 }
 
 abstract class _Post implements Post {
-  factory _Post({int userId, int id, String title, String body}) = _$_Post;
+  factory _Post({int? userId, int? id, String? title, String? body}) = _$_Post;
 
   factory _Post.fromJson(Map<String, dynamic> json) = _$_Post.fromJson;
 
   @override
-  int get userId;
+  int? get userId => throw _privateConstructorUsedError;
   @override
-  int get id;
+  int? get id => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String? get title => throw _privateConstructorUsedError;
   @override
-  String get body;
+  String? get body => throw _privateConstructorUsedError;
   @override
-  _$PostCopyWith<_Post> get copyWith;
+  @JsonKey(ignore: true)
+  _$PostCopyWith<_Post> get copyWith => throw _privateConstructorUsedError;
 }

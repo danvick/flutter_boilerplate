@@ -8,10 +8,10 @@ part of 'post.dart';
 
 _$_Post _$_$_PostFromJson(Map<String, dynamic> json) {
   return _$_Post(
-    userId: json['userId'] as int,
-    id: json['id'] as int,
-    title: json['title'] as String,
-    body: json['body'] as String,
+    userId: json['userId'] as int?,
+    id: json['id'] as int?,
+    title: json['title'] as String?,
+    body: json['body'] as String?,
   );
 }
 
