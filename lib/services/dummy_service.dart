@@ -6,7 +6,7 @@ import '../models/models.dart';
 import '../utils/http_client.dart';
 
 class DummyService {
-  // Send uncached http request
+  // Send un-cached http request
   static Future<List<Post>> getPosts() async {
     var response = await HttpClient.instance.dio
         .get('${HttpClient.serverUrl}/posts');
