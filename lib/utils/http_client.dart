@@ -6,6 +6,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'http_interceptors/auth_interceptor.dart';
 import 'http_interceptors/error_interceptor.dart';
+import 'http_interceptors/user_agent_interceptor.dart';
 
 // FIXME: Consider using a legit dependency injector instead of a Singleton
 class HttpClient {
@@ -43,9 +44,10 @@ class HttpClient {
       _dio = Dio();
 
       dio.interceptors.addAll([
+        ErrorInterceptor(),
         DioCacheInterceptor(options: cacheOptions),
         AuthInterceptor(),
-        ErrorInterceptor(),
+        UserAgentInterceptor(),
         DioFirebasePerformanceInterceptor(),
       ]);
 
