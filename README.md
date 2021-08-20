@@ -1,4 +1,4 @@
-# Flutter Rest Starter
+# Flutter Boilerplate
 
 My Flutter starter application for projects with a REST backend.
 
@@ -42,9 +42,10 @@ The main aim of this package is to get you up and running as fast as possible on
    We'll make use of [flutter_dotenv package](https://pub.dev/packages/flutter_dotenv) to store and retrieve our app configuration from `.env` files. 
    This will allow us to easily switch between different app configurations when running the app under different environments like production, staging, or debug mode.
    
-   All `.env` files will be contained in `environment/` directory at the root of your project.
+   All `.env` files are stored in `environment/` directory at the root of your project.
+   To set up a new environment create an new file with a `.env` extension under `environment` directory (e.g. `.env` or `dev.env` or `staging.env`) then copy the contents of `.env-sample` and populate as needed
 
-   To load a new environment file we'll do: 
+   Loading your environment file is as easy as: 
     ```dart
     import 'package:flutter_dotenv/flutter_dotenv.dart';
     ...
@@ -58,8 +59,6 @@ The main aim of this package is to get you up and running as fast as possible on
     final serverUrl = dotenv.env['SERVER_URL'];
     ```
 
-   To set up a new environment create an new file with a `.env` extension under `environment` directory (e.g. `.env` or `dev.env` or `staging.env`) then copy the contents of `.env-sample` and populate as needed
-   
    **NOTE:** All `.env` files are `.gitignored` by default since they may contain sensitive information such as paths, keys and such. 
    
 8. Firebase Reporting. 
