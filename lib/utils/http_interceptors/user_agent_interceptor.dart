@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dio/dio.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 
@@ -8,7 +10,7 @@ class UserAgentInterceptor extends Interceptor {
       RequestOptions options, RequestInterceptorHandler handler) async {
     var packageInfo = await PackageInfo.fromPlatform();
     options.headers['User-Agent'] =
-        '${packageInfo.packageName}/${packageInfo.buildNumber} - ${packageInfo.appName}/${packageInfo.version}';
+        '${packageInfo.appName} - ${packageInfo.packageName}/${packageInfo.version}+${packageInfo.buildNumber} - Dart/${Platform.version} - OS: ${Platform.operatingSystem}/${Platform.operatingSystemVersion}';
     handler.next(options);
   }
 }
