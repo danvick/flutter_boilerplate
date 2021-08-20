@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'home_page.dart';
 
 class MyApp extends StatelessWidget {
+  // Consider putting your analytics instance in a state manager to allow sharing the instance throughout the app
   final FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override

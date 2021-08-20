@@ -12,7 +12,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Flutter REST Starter')),
+      appBar: AppBar(title: const Text('Flutter Boilerplate')),
       body: FutureBuilder(
         future: DummyService.getPostsWithCaching(ignoreCache: true),
         builder: (context, AsyncSnapshot<List<Post>> snapshot) {
