@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ void main() async {
     await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
     await FirebasePerformance.instance.setPerformanceCollectionEnabled(false);
   }
+  FirebaseMessaging.onBackgroundMessage(backgroundMessageHandler);
   await dotenv.load(
       fileName: kDebugMode ? 'environment/debug.env' : 'environment/.env');
 
@@ -27,8 +29,13 @@ void main() async {
       return ErrorWidget(error.exception);
     };
 
-    runApp(MyApp());
+    runApp(App());
   }, (exception, stackTrace) {
     FirebaseCrashlytics.instance.recordError(exception, stackTrace);
   });
+}
+
+Future<dynamic> backgroundMessageHandler(RemoteMessage message) async {
+  print('onBackgroundMessage $message');
+  // TODO: handle background message
 }
