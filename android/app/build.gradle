@@ -46,7 +46,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "dev.danvickmiller.flutterreststarter"
+        applicationId "dev.danvickmiller.flutterboilerplate"
         minSdkVersion 16
         targetSdkVersion 30
         versionCode flutterVersionCode.toInteger()
