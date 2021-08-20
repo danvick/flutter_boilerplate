@@ -17,7 +17,7 @@ void main() async {
     await FirebasePerformance.instance.setPerformanceCollectionEnabled(false);
   }
   await dotenv.load(
-      fileName: kDebugMode ? 'environment/dev.env' : 'environment/.env');
+      fileName: kDebugMode ? 'environment/debug.env' : 'environment/.env');
 
   await runZonedGuarded(() async {
     FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
