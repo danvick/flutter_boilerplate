@@ -1,4 +1,4 @@
-package dev.danvickmiller.flutterreststarter
+package dev.danvickmiller.flutterboilerplate
 
 import io.flutter.embedding.android.FlutterActivity
 
