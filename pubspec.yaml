@@ -40,6 +40,7 @@ dev_dependencies:
   # flutter pub run change_app_package_name:main <com.new.package.name>
   flutter_launcher_icons: ^0.9.2
   # flutter pub run flutter_launcher_icons:main
+  flutter_lints: ^1.0.4
   flutter_native_splash: ^1.2.3
   # flutter pub run flutter_native_splash:create
   flutter_test:
@@ -47,7 +48,6 @@ dev_dependencies:
   #flutter_driver:
   #sdk: flutter
   freezed:
-  pedantic: ^1.11.1
   # screenshots: ^2.1.1
   # screenshots
   test: any
