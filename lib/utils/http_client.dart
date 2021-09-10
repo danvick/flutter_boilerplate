@@ -9,28 +9,19 @@ import 'http_interceptors/auth_interceptor.dart';
 import 'http_interceptors/error_interceptor.dart';
 import 'http_interceptors/user_agent_interceptor.dart';
 
-// Consider using a legit dependency injector instead of a Singleton
-class HttpClient {
-  // static final CacheConfig cacheConfig = CacheConfig();
-  static final HttpClient _singleton = HttpClient._();
 
+class HttpClient {
   static String get serverUrl => dotenv.env['SERVER_URL']!;
 
-  static HttpClient get instance => _singleton;
-  Dio? _dio;
-
-  HttpClient._();
-
-  // Global options
-  final cacheOptions = CacheOptions(
+  static CacheOptions defaultCacheOptions = CacheOptions(
     // A default store is required for interceptor.
     store: MemCacheStore(),
     // Default.
-    policy: CachePolicy.noCache,
+    policy: CachePolicy.request,
     // Optional. Returns a cached response on error but for statuses 401 & 403.
-    hitCacheOnErrorExcept: [401, 403],
+    // hitCacheOnErrorExcept: [401, 403, 500],
     // Optional. Overrides any HTTP directive to delete entry past this duration.
-    maxStale: const Duration(days: 1),
+    maxStale: const Duration(hours: 1),
     // Default. Allows 3 cache sets and ease cleanup.
     priority: CachePriority.normal,
     // Default. Body and headers encryption with your own algorithm.
@@ -42,30 +33,27 @@ class HttpClient {
     allowPostMethod: false,
   );
 
-  Dio get dio {
-    if (_dio == null) {
-      _dio = Dio();
+  static Dio create({BaseOptions? options, CacheOptions? cacheOptions}) {
+    var dio = Dio(options);
 
-      dio.interceptors.addAll([
-        ErrorInterceptor(),
-        //FIXME-danvick: make caching optional depending on
-        DioCacheInterceptor(options: cacheOptions),
-        AuthInterceptor(),
-        UserAgentInterceptor(),
-        DioFirebasePerformanceInterceptor(),
-      ]);
+    dio.interceptors.addAll([
+      ErrorInterceptor(),
+      if (cacheOptions != null) DioCacheInterceptor(options: cacheOptions),
+      AuthInterceptor(),
+      UserAgentInterceptor(),
+      DioFirebasePerformanceInterceptor(),
+    ]);
 
-      if (kDebugMode) {
-        dio.interceptors.add(
-          PrettyDioLogger(
-            requestHeader: true,
-            requestBody: true,
-            responseHeader: true,
-            // responseBody: true,
-          ),
-        );
-      }
+    if (kDebugMode) {
+      dio.interceptors.add(PrettyDioLogger(
+        requestHeader: false,
+        responseHeader: true,
+        responseBody: false,
+        request: false,
+        requestBody: false,
+      ));
     }
-    return _dio!;
+
+    return dio;
   }
 }

@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: const Text('Flutter Boilerplate')),
       body: FutureBuilder(
-        future: DummyService.getPostsWithCaching(ignoreCache: true),
+        future: DummyService.getPostsWithCaching(),
         builder: (context, AsyncSnapshot<List<Post>> snapshot) {
           if (snapshot.hasData) {
             return RefreshIndicator(
