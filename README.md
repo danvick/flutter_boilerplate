@@ -65,14 +65,14 @@ That said, I may consider creating branches with my own architecture and state m
    We'll make use of [flutter_dotenv package](https://pub.dev/packages/flutter_dotenv) to store and retrieve our app configuration from `.env` files. 
    This will allow us to easily switch between different app configurations when running the app under different environments like production, staging, or debug modes.
    
-   All `.env` files are stored in `environment/` directory at the root of your project.
-   To set up a new environment create an new file with a `.env` extension under `environment` directory (e.g. `.env` or `debug.env` or `staging.env`) then copy the contents of `.env-sample` and populate as needed
+   All `.env` files are stored in `environments/` directory at the root of your project.
+   To set up a new environment create an new file with a `.env` extension under `environments` directory (e.g. `.env` or `debug.env` or `staging.env`) then copy the contents of `.env-sample` and populate as needed
 
    Loading your environment file is as easy as: 
     ```dart
     import 'package:flutter_dotenv/flutter_dotenv.dart';
     ...
-    await dotenv.load('.env');
+    await dotenv.load('environments/.env');
     ```
 
     And make use of environment variables like so:
