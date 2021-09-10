@@ -8,10 +8,10 @@ The main aim of this template is to get you up and running as fast as possible o
 This is a simple boilerplate template for creating a production-ready Flutter app with icon / splash screen generation, rest boilerplate, reporting (analytics, performance and crash reporting) all wired up for you. 
 
 ## What this not:
-Since y'all get a bit too religious with your State Management and App Architecture ways, this templates doesn't take any opinions on these topics.
+Since y'all get a bit too religious in your State Management and App Architecture ways, this templates doesn't take any opinions on these topics.
 
-This is therefore not your state management and app architecture template. 
-Therefore, feel free to choose any state management approach or move things around to create your preferred architecture.
+This is, therefore, not your state management and app architecture template. 
+So, feel free to choose any state management approach or move things around to create your preferred architecture.
 
 Or fork the repo and customize the template to your heart's content and make it your own!
 
