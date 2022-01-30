@@ -27,7 +27,7 @@ void main() async {
       return ErrorWidget(error.exception);
     };
 
-    runApp(MyApp());
+    runApp(const MyApp());
   }, (exception, stackTrace) {
     FirebaseCrashlytics.instance.recordError(exception, stackTrace);
   });
