@@ -1,3 +1,5 @@
+import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
+
 import '../models/models.dart';
 import '../utils/http_client.dart';
 
@@ -13,7 +15,7 @@ class DummyService {
   static Future<List<Post>> getPostsWithCaching({ignoreCache = false}) async {
     var response = await HttpClient.create(
             cacheOptions: HttpClient.defaultCacheOptions
-                .copyWith(maxStale: const Duration(days: 1)))
+                .copyWith(maxStale: const Nullable(Duration(days: 1))))
         .get(
       '${HttpClient.serverUrl}/posts',
     );
