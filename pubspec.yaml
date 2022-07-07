@@ -1,41 +1,42 @@
 name: flutterboilerplate #TODO Replace with you app's name
 description: My Flutter Boilerplate #TODO Replace with you app's description
 version: 1.0.0+1
+publish_to: 'none'
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  dio: ^4.0.4
-  dio_cache_interceptor: ^3.2.6
-  dio_firebase_performance: ^0.3.1-dev.3
-  firebase_analytics: ^9.1.2
-  firebase_core: ^1.13.1
-  firebase_crashlytics: ^2.5.3
-  firebase_performance: ^0.7.0
+  dio: ^4.0.6
+  dio_cache_interceptor: ^3.2.7
+  firebase_performance_dio: ^0.4.0
+  firebase_analytics: ^9.1.12
+  firebase_core: ^1.19.1
+  firebase_crashlytics: ^2.8.4
+  firebase_performance: ^0.8.1+1
   flutter:
     sdk: flutter
   flutter_dotenv: ^5.0.2
-  freezed_annotation:
-  json_serializable:
-  package_info_plus: ^1.4.0
+  freezed_annotation: ^2.0.3
+  json_serializable: ^6.2.0
+  package_info_plus: ^1.4.2
   pretty_dio_logger: ^1.1.1
 
 dev_dependencies:
-  build_runner: ^2.1.8
+  build_runner: ^2.1.11
   # flutter packages pub run build_runner watch --delete-conflicting-outputs
-  change_app_package_name: ^1.0.0
+  change_app_package_name: ^1.1.0
   # flutter pub run change_app_package_name:main <com.new.package.name>
-  flutter_launcher_icons: ^0.9.2
+  flutter_launcher_icons: ^0.9.3
   # flutter pub run flutter_launcher_icons:main
-  flutter_lints: ^1.0.4
-  flutter_native_splash: ^2.1.1
+  flutter_lints: ^2.0.1
+  flutter_native_splash: ^2.2.4
   # flutter pub run flutter_native_splash:create
   flutter_test:
     sdk: flutter
   #flutter_driver:
   #sdk: flutter
-  freezed:
+  freezed: ^2.0.4
   # screenshots: ^2.1.1
   # screenshots
   test: any
