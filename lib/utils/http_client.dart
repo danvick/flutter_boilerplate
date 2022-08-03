@@ -9,7 +9,6 @@ import 'http_interceptors/auth_interceptor.dart';
 import 'http_interceptors/error_interceptor.dart';
 import 'http_interceptors/user_agent_interceptor.dart';
 
-
 class HttpClient {
   static String get serverUrl => dotenv.env['SERVER_URL']!;
 

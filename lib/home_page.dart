@@ -4,10 +4,12 @@ import 'models/post.dart';
 import 'services/dummy_service.dart';
 
 class HomePage extends StatefulWidget {
+  static String routeName = 'home';
+
   const HomePage({Key? key}) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {

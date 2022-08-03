@@ -9,8 +9,7 @@ class AuthInterceptor extends Interceptor {
     if (!options.path.contains('/login')) {
       //TODO: Fetch your token from local storage (or wherever) and plug it in
       var token = '<YOUR-TOKEN-HERE>';
-      options.headers[HttpHeaders.authorizationHeader] =
-          'Bearer $token';
+      options.headers[HttpHeaders.authorizationHeader] = 'Bearer $token';
     }
     handler.next(options);
   }
