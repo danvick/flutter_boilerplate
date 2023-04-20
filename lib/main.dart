@@ -17,12 +17,20 @@ void main() async {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
       );
+      if (!kIsWeb) {
+        if (kDebugMode) {
+          await FirebaseCrashlytics.instance
+              .setCrashlyticsCollectionEnabled(false);
+        } else {
+          await FirebaseCrashlytics.instance
+              .setCrashlyticsCollectionEnabled(true);
+        }
+      }
       if (kDebugMode) {
-        await FirebaseCrashlytics.instance
-            .setCrashlyticsCollectionEnabled(false);
         await FirebasePerformance.instance
             .setPerformanceCollectionEnabled(false);
       }
+
       await dotenv.load(
           fileName:
               kDebugMode ? 'environments/debug.env' : 'environments/.env');
