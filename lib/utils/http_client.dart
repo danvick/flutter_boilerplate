@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:firebase_performance_dio/firebase_performance_dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 import 'http_interceptors/auth_interceptor.dart';
@@ -10,7 +9,45 @@ import 'http_interceptors/error_interceptor.dart';
 import 'http_interceptors/user_agent_interceptor.dart';
 
 class HttpClient {
-  static String get serverUrl => dotenv.env['SERVER_URL']!;
+  late Dio _dio;
+
+  HttpClient({BaseOptions? options}) {
+    _dio = Dio(
+            (options ?? BaseOptions()).copyWith(validateStatus: (int? status) {
+      return status != null && status >= 200 && status < 400;
+    }))
+        /*..httpClientAdapter = Http2Adapter(
+        ConnectionManager(
+          idleTimeout: const Duration(seconds: 10),
+          onClientCreate: (_, config) =>
+          config.onBadCertificate = (_) => true,
+        ),
+      )*/
+        ;
+    _dio.interceptors.addAll([
+      ErrorInterceptor(),
+      AuthInterceptor(),
+      UserAgentInterceptor(),
+      DioFirebasePerformanceInterceptor(),
+      /*CookieManager(PersistCookieJar(
+        ignoreExpires: true,
+        storage: FileStorage("${GetIt.I<Directory>().path}/.cookies/"),
+      )),*/
+    ]);
+
+    if (kDebugMode) {
+      _dio.interceptors.add(PrettyDioLogger(
+        requestHeader: false,
+        responseHeader: true,
+        responseBody: false,
+        request: false,
+        requestBody: false,
+      ));
+    }
+    // _dio.addSentry();
+  }
+
+  Dio get dio => _dio;
 
   static CacheOptions defaultCacheOptions = CacheOptions(
     // A default store is required for interceptor.
@@ -31,28 +68,4 @@ class HttpClient {
     // Overriding [keyBuilder] is strongly recommended.
     allowPostMethod: false,
   );
-
-  static Dio create({BaseOptions? options, CacheOptions? cacheOptions}) {
-    var dio = Dio(options);
-
-    dio.interceptors.addAll([
-      ErrorInterceptor(),
-      if (cacheOptions != null) DioCacheInterceptor(options: cacheOptions),
-      AuthInterceptor(),
-      UserAgentInterceptor(),
-      DioFirebasePerformanceInterceptor(),
-    ]);
-
-    if (kDebugMode) {
-      dio.interceptors.add(PrettyDioLogger(
-        requestHeader: false,
-        responseHeader: true,
-        responseBody: false,
-        request: false,
-        requestBody: false,
-      ));
-    }
-
-    return dio;
-  }
 }

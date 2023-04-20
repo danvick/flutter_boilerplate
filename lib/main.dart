@@ -1,11 +1,14 @@
 import 'dart:async';
 
+import 'package:dio/dio.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_performance/firebase_performance.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutterboilerplate/utils/http_client.dart';
+import 'package:get_it/get_it.dart';
 
 import 'app.dart';
 import 'firebase_options.dart';
@@ -17,6 +20,7 @@ void main() async {
       await Firebase.initializeApp(
         options: DefaultFirebaseOptions.currentPlatform,
       );
+      GetIt.instance.registerLazySingleton(() => HttpClient(options: BaseOptions(baseUrl: dotenv.env['SERVER_URL']!)));
       if (!kIsWeb) {
         if (kDebugMode) {
           await FirebaseCrashlytics.instance
