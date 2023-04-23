@@ -44,7 +44,7 @@ dev_dependencies:
   # screenshots
   # test: any
 
-flutter_icons:
+flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
