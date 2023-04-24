@@ -49,7 +49,7 @@ That said, I may consider creating branches with my architecture and state manag
 
    Then we'll auto-generate your app launcher icons using [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons) package.
    * Copy the image you want to make your launcher icons out of to `assets/icon/icon.png.`
-   * Now run `flutter pub run flutter_launcher_icons:main`. This command will auto-generate Android and iOS launcher icons from the PNG file for the different DPIs and place them in their respective resource directories.
+   * Now run `flutter pub run flutter_launcher_icons`. This command will auto-generate Android and iOS launcher icons from the PNG file for the different DPIs and place them in their respective resource directories.
 
    **NOTE**: Check the [package documentation](https://pub.dev/packages/flutter_launcher_icons#book-guide) for more configuration options on generating launcher icons and update your `pubspec. yaml` accordingly.
    For example, you may want different icons for different platforms since Android allows you to use a transparent icon and iOS doesn't.
