@@ -7,10 +7,11 @@ import '../utils/http_client.dart';
 class DummyService {
   // Send un-cached http request
   static Future<List<Post>> getPosts() async {
-    final response = await GetIt.I<HttpClient>()
-        .dio
-        .get<List<Map<String, dynamic>>>('/posts');
-    return response.data!.map<Post>(Post.fromJson).toList();
+    final response =
+        await GetIt.I<HttpClient>().dio.get<List<dynamic>>('/posts');
+    return response.data!
+        .map<Post>(( e) => Post.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 
   // This method implements an HTTP request with caching
@@ -22,7 +23,9 @@ class DummyService {
     );
     final response = await (GetIt.I<HttpClient>().dio
           ..interceptors.add(DioCacheInterceptor(options: cacheOptions)))
-        .get<List<Map<String, dynamic>>>('/posts');
-    return response.data!.map<Post>(Post.fromJson).toList();
+        .get<List<dynamic>>('/posts');
+    return response.data!
+        .map<Post>(( e) => Post.fromJson(e as Map<String, dynamic>))
+        .toList();
   }
 }
