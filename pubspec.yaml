@@ -10,6 +10,7 @@ dependencies:
   dio: ^5.1.1
   dio_cache_interceptor: ^3.4.2
   dio_http2_adapter: ^2.2.0
+  envied: ^0.3.0+3
   firebase_performance_dio: ^0.5.0
   firebase_analytics: ^10.2.1
   firebase_core: ^2.10.0
@@ -17,7 +18,6 @@ dependencies:
   firebase_performance: ^0.9.1+1
   flutter:
     sdk: flutter
-  flutter_dotenv: ^5.0.2
   freezed_annotation: ^2.2.0
   get_it: ^7.2.0
   go_router: ^6.5.7
@@ -40,6 +40,7 @@ dev_dependencies:
   #flutter_driver:
   #sdk: flutter
   freezed: ^2.3.2
+  envied_generator: ^0.3.0+3
   # screenshots: ^2.1.1
   # screenshots
   # test: any
@@ -65,8 +66,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
 
-  assets:
-    - environments/
+  # assets:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

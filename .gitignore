@@ -45,3 +45,4 @@ lib/generated_plugin_registrant.dart
 
 # Avoid adding .env files to VCS - may contain sensitive info
 *.env
+**/env.g.dart
