@@ -73,7 +73,8 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-rest-starter',
     databaseURL: 'https://flutter-rest-starter.firebaseio.com',
     storageBucket: 'flutter-rest-starter.appspot.com',
-    iosClientId: '1045008187828-shfue9h8a969b7q678sd671d91h4ln8q.apps.googleusercontent.com',
+    iosClientId:
+        '1045008187828-shfue9h8a969b7q678sd671d91h4ln8q.apps.googleusercontent.com',
     iosBundleId: 'dev.danvickmiller.flutterboilerplate',
   );
 }

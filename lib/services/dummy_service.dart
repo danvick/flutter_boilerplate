@@ -10,7 +10,7 @@ class DummyService {
     final response =
         await GetIt.I<HttpClient>().dio.get<List<dynamic>>('/posts');
     return response.data!
-        .map<Post>(( e) => Post.fromJson(e as Map<String, dynamic>))
+        .map<Post>((e) => Post.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 
@@ -25,7 +25,7 @@ class DummyService {
           ..interceptors.add(DioCacheInterceptor(options: cacheOptions)))
         .get<List<dynamic>>('/posts');
     return response.data!
-        .map<Post>(( e) => Post.fromJson(e as Map<String, dynamic>))
+        .map<Post>((e) => Post.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 }

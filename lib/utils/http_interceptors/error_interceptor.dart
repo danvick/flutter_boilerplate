@@ -27,8 +27,7 @@ class ErrorInterceptor extends Interceptor {
               error: '${err.response!.statusCode}: ${err.response!.data}',
             );
           } else {
-            dioError =
-                err.copyWith(error: err.response.toString());
+            dioError = err.copyWith(error: err.response.toString());
           }
           if (err.response!.statusCode == 404) {
             dioError = err.copyWith(

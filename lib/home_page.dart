@@ -4,7 +4,6 @@ import 'models/post.dart';
 import 'services/dummy_service.dart';
 
 class HomePage extends StatefulWidget {
-
   const HomePage({super.key});
 
   static String routeName = 'home';
