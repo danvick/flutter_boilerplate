@@ -32,8 +32,8 @@ dev_dependencies:
   # flutter pub run change_app_package_name:main <com.new.package.name>
   flutter_launcher_icons: ^0.13.1
   # flutter pub run flutter_launcher_icons:main
-  flutter_lints: ^2.0.1
   flutter_native_splash: ^2.2.19
+  very_good_analysis: ^5.0.0+1
   # flutter pub run flutter_native_splash:create
   flutter_test:
     sdk: flutter
