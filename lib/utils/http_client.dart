@@ -10,13 +10,13 @@ import 'http_interceptors/error_interceptor.dart';
 import 'http_interceptors/user_agent_interceptor.dart';
 
 class HttpClient {
-  late Dio _dio;
-
   HttpClient({BaseOptions? options}) {
     _dio = Dio(
-      (options ?? BaseOptions()).copyWith(validateStatus: (int? status) {
-        return status != null && status >= 200 && status < 400;
-      }),
+      (options ?? BaseOptions()).copyWith(
+        validateStatus: (int? status) {
+          return status != null && status >= 200 && status < 400;
+        },
+      ),
     )..httpClientAdapter = Http2Adapter(
         ConnectionManager(
           idleTimeout: const Duration(seconds: 10),
@@ -35,36 +35,27 @@ class HttpClient {
     ]);
 
     if (kDebugMode) {
-      _dio.interceptors.add(PrettyDioLogger(
-        requestHeader: false,
-        responseHeader: true,
-        responseBody: false,
-        request: false,
-        requestBody: false,
-      ));
+      _dio.interceptors.add(
+        PrettyDioLogger(
+          responseHeader: true,
+          responseBody: false,
+          request: false,
+        ),
+      );
     }
     // _dio.addSentry();
   }
+
+  late Dio _dio;
 
   Dio get dio => _dio;
 
   static CacheOptions defaultCacheOptions = CacheOptions(
     // A default store is required for interceptor.
     store: MemCacheStore(),
-    // Default.
-    policy: CachePolicy.request,
     // Optional. Returns a cached response on error but for statuses 401 & 403.
     // hitCacheOnErrorExcept: [401, 403, 500],
-    // Optional. Overrides any HTTP directive to delete entry past this duration.
+    // Optional. Overrides HTTPs directive to delete entry past this duration.
     maxStale: const Duration(hours: 1),
-    // Default. Allows 3 cache sets and ease cleanup.
-    priority: CachePriority.normal,
-    // Default. Body and headers encryption with your own algorithm.
-    cipher: null,
-    // Default. Key builder to retrieve requests.
-    keyBuilder: CacheOptions.defaultCacheKeyBuilder,
-    // Default. Allows to cache POST requests.
-    // Overriding [keyBuilder] is strongly recommended.
-    allowPostMethod: false,
   );
 }

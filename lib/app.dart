@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutterboilerplate/router.dart';
 import 'package:go_router/go_router.dart';
 
+import 'router.dart';
+
 class MyApp extends StatefulWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -13,7 +14,7 @@ class _MyAppState extends State<MyApp> {
   late GoRouter router;
 
   @override
-  initState() {
+  void initState() {
     super.initState();
     router = appRouter();
   }
