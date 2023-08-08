@@ -9,21 +9,20 @@ import 'http_interceptors/auth_interceptor.dart';
 import 'http_interceptors/error_interceptor.dart';
 import 'http_interceptors/user_agent_interceptor.dart';
 
-class HttpClient {
-  HttpClient({BaseOptions? options}) {
-    _dio = Dio(
-      (options ?? BaseOptions()).copyWith(
-        validateStatus: (int? status) {
-          return status != null && status >= 200 && status < 400;
-        },
+class HttpClient with DioMixin implements Dio {
+  HttpClient({BaseOptions? baseOptions}) {
+    options = (baseOptions ?? BaseOptions()).copyWith(
+      validateStatus: (int? status) {
+        return status != null && status >= 200 && status < 400;
+      },
+    );
+    httpClientAdapter = Http2Adapter(
+      ConnectionManager(
+        idleTimeout: const Duration(seconds: 10),
+        onClientCreate: (_, config) => config.onBadCertificate = (_) => true,
       ),
-    )..httpClientAdapter = Http2Adapter(
-        ConnectionManager(
-          idleTimeout: const Duration(seconds: 10),
-          onClientCreate: (_, config) => config.onBadCertificate = (_) => true,
-        ),
-      );
-    _dio.interceptors.addAll([
+    );
+    interceptors.addAll([
       ErrorInterceptor(),
       AuthInterceptor(),
       UserAgentInterceptor(),
@@ -35,7 +34,7 @@ class HttpClient {
     ]);
 
     if (kDebugMode) {
-      _dio.interceptors.add(
+      interceptors.add(
         PrettyDioLogger(
           responseHeader: true,
           responseBody: false,
@@ -45,10 +44,6 @@ class HttpClient {
     }
     // _dio.addSentry();
   }
-
-  late Dio _dio;
-
-  Dio get dio => _dio;
 
   static CacheOptions defaultCacheOptions = CacheOptions(
     // A default store is required for interceptor.

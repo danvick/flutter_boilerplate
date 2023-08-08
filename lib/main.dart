@@ -24,7 +24,7 @@ void main() async {
         options: DefaultFirebaseOptions.currentPlatform,
       );
       GetIt.instance.registerLazySingleton(
-        () => HttpClient(options: BaseOptions(baseUrl: Env.serverUrl)),
+        () => HttpClient(baseOptions: BaseOptions(baseUrl: Env.serverUrl)),
       );
       if (!kIsWeb) {
         if (kDebugMode) {
