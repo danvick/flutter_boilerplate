@@ -1,3 +1,4 @@
+import 'package:dio/browser.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cache_interceptor/dio_cache_interceptor.dart';
 import 'package:dio_http2_adapter/dio_http2_adapter.dart';
@@ -16,12 +17,16 @@ class HttpClient with DioMixin implements Dio {
         return status != null && status >= 200 && status < 400;
       },
     );
-    httpClientAdapter = Http2Adapter(
-      ConnectionManager(
-        idleTimeout: const Duration(seconds: 10),
-        onClientCreate: (_, config) => config.onBadCertificate = (_) => true,
-      ),
-    );
+    if (!kIsWeb) {
+      httpClientAdapter = Http2Adapter(
+        ConnectionManager(
+          idleTimeout: const Duration(seconds: 10),
+          onClientCreate: (_, config) => config.onBadCertificate = (_) => true,
+        ),
+      );
+    } else {
+      httpClientAdapter = BrowserHttpClientAdapter(withCredentials: false);
+    }
     interceptors.addAll([
       ErrorInterceptor(),
       AuthInterceptor(),
