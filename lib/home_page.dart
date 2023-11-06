@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pwa_install/pwa_install.dart';
 
 import 'models/post.dart';
 import 'services/dummy_service.dart';
@@ -44,6 +45,19 @@ class _HomePageState extends State<HomePage> {
           return const Center(child: CircularProgressIndicator());
         },
       ),
+      floatingActionButton: (!PWAInstall().installPromptEnabled)
+          ? null
+          : FloatingActionButton.extended(
+              onPressed: () {
+                try {
+                  PWAInstall().promptInstall_();
+                } catch (e) {
+                  debugPrint(e.toString());
+                }
+              },
+              label: const Text('Install'),
+              icon: const Icon(Icons.download_for_offline),
+            ),
     );
   }
 }
